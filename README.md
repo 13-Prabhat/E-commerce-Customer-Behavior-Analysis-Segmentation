@@ -219,23 +219,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📌 Project Status
 
-**Current Phase**: 🔄 Day 1 - Project Setup & Structure
-
-**Timeline**: 7-day sprint (2 hours/day)
-
-| Day | Phase | Status |
-|-----|-------|--------|
-| Day 1 | Setup & Foundation | 🔄 In Progress |
-| Day 2 | Data Loading & Cleaning | ⏳ Pending |
-| Day 3 | Exploratory Analysis | ⏳ Pending |
-| Day 4 | Feature Engineering (RFM) | ⏳ Pending |
-| Day 5 | Customer Segmentation | ⏳ Pending |
-| Day 6 | Insights & Recommendations | ⏳ Pending |
-| Day 7 | Documentation & Polish | ⏳ Pending |
-
----
 
 ## 🎓 Learning Outcomes
 
