@@ -1,8 +1,7 @@
 # pipeline.py
 import logging
 import pandas as pd
-from sklearn.preprocessing import PowerTransformer
-from sklearn.cluster import KMeans
+from src.segmentation import perform_clustering
 from src.data_processing import load_data, clean_data, save_processed_data
 from src.rfm_calculator import calculate_rfm, calculate_rfm_scores, segment_customers
 
@@ -37,8 +36,8 @@ def run_pipeline():
     scaled = pt.fit_transform(rfm[['Recency', 'Frequency', 'Monetary']])
 
     # 4. Cluster
-    kmeans = KMeans(n_clusters=N_CLUSTERS, random_state=RANDOM_STATE, n_init=10)
-    rfm['Cluster'] = kmeans.fit_predict(scaled)
+   rfm, model, score = perform_clustering(rfm)
+   logger.info(f"Silhouette Score: {score:.3f}")
 
     # 5. Human-readable label (assign by mean Monetary descending)
     cluster_means = rfm.groupby('Cluster')['Monetary'].mean().sort_values(ascending=False)
