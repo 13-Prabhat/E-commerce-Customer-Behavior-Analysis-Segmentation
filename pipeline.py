@@ -1,5 +1,5 @@
 from sklearn.preprocessing import PowerTransformer
-from src.config import RAW_DATA_PATH, PROCESSED_DATA_PATH, N_CLUSTERS, RANDOM_STATE
+#from src.config import RAW_DATA_PATH, PROCESSED_DATA_PATH, N_CLUSTERS, RANDOM_STATE
 import logging
 import pandas as pd
 from src.segmentation import perform_clustering
@@ -33,12 +33,12 @@ def run_pipeline():
     rfm = segment_customers(rfm)
 
     # 3. Scale (Yeo-Johnson handles zeros and skew)
-    pt = PowerTransformer(method='yeo-johnson')
-    scaled = pt.fit_transform(rfm[['Recency', 'Frequency', 'Monetary']])
+    #pt = PowerTransformer(method='yeo-johnson')
+    #scaled = pt.fit_transform(rfm[['Recency', 'Frequency', 'Monetary']])
 
     # 4. Cluster
-   rfm, model, score = perform_clustering(rfm)
-   logger.info(f"Silhouette Score: {score:.3f}")
+    #rfm, model, score = perform_clustering(rfm)
+    #logger.info(f"Silhouette Score: {score:.3f}")
 
     # 5. Human-readable label (assign by mean Monetary descending)
     cluster_means = rfm.groupby('Cluster')['Monetary'].mean().sort_values(ascending=False)
