@@ -1,4 +1,5 @@
-# pipeline.py
+from sklearn.preprocessing import PowerTransformer
+from src.config import RAW_DATA_PATH, PROCESSED_DATA_PATH, N_CLUSTERS, RANDOM_STATE
 import logging
 import pandas as pd
 from src.segmentation import perform_clustering
